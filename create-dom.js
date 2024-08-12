@@ -13,3 +13,9 @@ const titleElement = document.createElement('title');
 headElement.appendChild(titleElement);
 titleElement.setAttribute('class','dom-title');
 
+// on html element add body element with class dom-body
+
+const bodyElement = document.createElement('body');
+bodyElement.setAttribute('class','dom-body');
+html.appendChild(bodyElement);
+
