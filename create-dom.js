@@ -45,3 +45,11 @@ thirdItem.innerText =  'Pineapple';
 
 orderList.appendChild(thirdItem);
 
+// iterate over each list item and display results in the console
+
+Array.from(orderList.childNodes).forEach(
+    (item) => {
+        console.log( item.textContent )
+    }
+)
+
