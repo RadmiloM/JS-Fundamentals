@@ -54,11 +54,12 @@ eventButton.addEventListener('click', (event)=> {
     eventButton.style.color = 'blue';
 })
 
-let catFacts = [];
 // fetch one public api using fetch api and log the results in the console
 // display data from cat facts text on template
 // for each even index add border red and for each odd add border blue
 // add space between margins
+
+let catFacts = [];
 
 fetch("https://cat-fact.herokuapp.com/facts")
 .then((data) => data.json())
@@ -75,9 +76,16 @@ fetch("https://cat-fact.herokuapp.com/facts")
             item.innerText = fact.text;
             item.style.border=  'thick solid blue';
         }
-
     })
 });
 
 
+// fetch other public api and send headers in request
+fetch("https://www.dnd5eapi.co/api/ability-scores/cha", {
+    method: "GET",
+    headers: {
+        'Content-Type': 'application/json'
+    }
+}).then((data) => data.json())
+.then((data) => console.log(data));
 
