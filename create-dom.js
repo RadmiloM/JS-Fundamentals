@@ -54,3 +54,8 @@ eventButton.addEventListener('click', (event)=> {
     eventButton.style.color = 'blue';
 })
 
+// fetch one public api using fetch api and log the results in the console
+
+fetch("https://cat-fact.herokuapp.com/facts")
+.then((data) => data.json())
+.then((data)=> console.log(data));
