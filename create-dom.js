@@ -108,9 +108,18 @@ const inputElement = document.createElement('input');
 formElement.append(inputElement);
 inputElement.setAttribute('name','yourName')
 inputElement.style.margin = '5px';
+inputElement.classList.add('input-name')
 
 const submitName = document.createElement('button');
 formElement.appendChild(submitName);
 submitName.innerText = 'Submit';
 submitName.style.display = 'flex';
 submitName.style.margin = '5px';
+
+// log input data from the form element and change color of the button
+submitName.addEventListener('click',(event)=> {
+    event.preventDefault();
+    const inputValue = document.querySelector('.input-name').value;
+    console.log(inputValue);
+    submitName.style.backgroundColor = 'red';
+});
