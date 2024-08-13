@@ -54,8 +54,21 @@ eventButton.addEventListener('click', (event)=> {
     eventButton.style.color = 'blue';
 })
 
+let catFacts = [];
 // fetch one public api using fetch api and log the results in the console
+// display data from cat facts text on template
 
 fetch("https://cat-fact.herokuapp.com/facts")
 .then((data) => data.json())
-.then((data)=> console.log(data));
+.then((data)=> {
+    this.catFacts = data;
+    this.catFacts.forEach((fact) => {
+        const item = document.createElement('li');
+        orderList.appendChild(item);
+        item.innerText = fact.text;
+
+    })
+});
+
+
+
