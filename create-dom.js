@@ -57,15 +57,24 @@ eventButton.addEventListener('click', (event)=> {
 let catFacts = [];
 // fetch one public api using fetch api and log the results in the console
 // display data from cat facts text on template
+// for each even index add border red and for each odd add border blue
+// add space between margins
 
 fetch("https://cat-fact.herokuapp.com/facts")
 .then((data) => data.json())
 .then((data)=> {
     this.catFacts = data;
-    this.catFacts.forEach((fact) => {
+    this.catFacts.forEach((fact,i) => {
         const item = document.createElement('li');
         orderList.appendChild(item);
-        item.innerText = fact.text;
+        if(i % 2 === 0){
+            item.innerText = fact.text;
+            item.style.border = ' thick solid red';
+            item.style.margin = '10px'
+        } else {
+            item.innerText = fact.text;
+            item.style.border=  'thick solid blue';
+        }
 
     })
 });
