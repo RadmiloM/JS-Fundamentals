@@ -89,3 +89,28 @@ fetch("https://www.dnd5eapi.co/api/ability-scores/cha", {
 }).then((data) => data.json())
 .then((data) => console.log(data));
 
+
+// append form element on the dom, add label and input element on the form element with type text and submit button
+
+const formElement = document.createElement('form');
+document.documentElement.appendChild(formElement);
+formElement.setAttribute('type','text');
+
+const labelElement = document.createElement('label');
+formElement.appendChild(labelElement);
+labelElement.innerText = 'Enter your name: ';
+labelElement.setAttribute('for','yourName');
+labelElement.style.display = 'flex';
+labelElement.style.margin = '5px';
+
+
+const inputElement = document.createElement('input');
+formElement.append(inputElement);
+inputElement.setAttribute('name','yourName')
+inputElement.style.margin = '5px';
+
+const submitName = document.createElement('button');
+formElement.appendChild(submitName);
+submitName.innerText = 'Submit';
+submitName.style.display = 'flex';
+submitName.style.margin = '5px';
