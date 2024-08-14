@@ -123,3 +123,54 @@ submitName.addEventListener('click',(event)=> {
     console.log(inputValue);
     submitName.style.backgroundColor = 'red';
 });
+
+// create table with header columns and display data from the json file
+const table = document.createElement('table');
+document.documentElement.appendChild(table);
+
+const headerRow = document.createElement('tr');
+table.appendChild(headerRow);
+
+const idHeader = document.createElement('th');
+headerRow.append(idHeader);
+idHeader.innerText = 'ID';
+
+const firstNameHeader = document.createElement('th');
+firstNameHeader.innerText = 'FIRST_NAME';
+headerRow.appendChild(firstNameHeader);
+
+const lastNameHeader = document.createElement('th');
+lastNameHeader.innerText = "LAST_NAME";
+headerRow.appendChild(lastNameHeader);
+
+const age = document.createElement('th');
+age.innerText = "AGE";
+headerRow.appendChild(age);
+
+const personData = [];
+fetch("/people.json")
+.then((data)=> data.json())
+.then((data)=>  {
+    this.personData = data;
+    this.personData.forEach((person) => {
+        const row = document.createElement('tr');
+        const currentID = document.createElement('td');
+        const currentFirstName = document.createElement('td');
+        const currentLastName = document.createElement('td');
+        const currentAge = document.createElement('td');
+        currentID.innerText = person.ID;
+        currentFirstName.innerText = person.FIRST_NAME;
+        currentLastName.innerText = person.LAST_NAME;
+        currentAge.innerText = person.AGE;
+        row.appendChild(currentID);
+        row.appendChild(currentFirstName);
+        row.appendChild(currentLastName);
+        row.appendChild(currentAge);
+        row.style.border = '1px solid black';
+        table.appendChild(row);
+    })
+})
+
+table.style.border = '1px solid black'
+table.style.borderCollapse = 'collapse';
+
