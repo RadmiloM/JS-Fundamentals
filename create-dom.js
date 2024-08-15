@@ -184,9 +184,29 @@ const h2 = document.getElementsByTagName('h2');
 
 // create new json file with animals data and retrieve data from new file
 
+const animalsData = [];
 fetch("/animals.json")
 .then((data) => data.json())
-.then((data)=> console.log(data));
+.then((data)=>  {
+    this.animalsData = data;
+    const newOrderList = document.createElement('ol');
+    document.documentElement.appendChild(newOrderList);
+    newOrderList.setAttribute('class', 'animal-list');
+    this.animalsData.forEach((animal,index) => {
+        const animalRace = document.createElement('li');
+        animalRace.innerText = animal.race;
+        if(index % 2 === 0){
+            newOrderList.appendChild(animalRace);
+        }
+        document.documentElement.appendChild(newOrderList)
+
+    })
+});
+
+
+
+
+
 
 
 
