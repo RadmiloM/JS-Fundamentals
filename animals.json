@@ -1,0 +1,22 @@
+[
+    {
+        "race": "cat",
+        "color" : "grey",
+        "age" : 2
+    },
+    {
+        "race": "dog",
+        "color" : "orange",
+        "age" : 4
+    },
+    {
+        "race" : "duck",
+        "color" : "black",
+        "age" : 3
+    },
+    {
+        "race": "elephant",
+        "color" : "grey",
+        "age": 8
+    }
+]

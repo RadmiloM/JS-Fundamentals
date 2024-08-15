@@ -182,4 +182,13 @@ h2Element.innerText = 'This is the new text';
 document.documentElement.appendChild(h2Element);
 const h2 = document.getElementsByTagName('h2');
 
+// create new json file with animals data and retrieve data from new file
+
+fetch("/animals.json")
+.then((data) => data.json())
+.then((data)=> console.log(data));
+
+
+
+
 
