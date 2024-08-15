@@ -203,14 +203,62 @@ fetch("/animals.json")
     })
 });
 
+// create object and append it to the dom
+
+const person = {
+    name : "Rajko",
+    age : 44,
+    city: "Belgrade"
+}
+
+
+const objectElement = document.createElement('h1');
+document.documentElement.appendChild(objectElement);
+objectElement.innerHTML = `person: ${person.name} has age: ${person.age} and lives ${person.city}`;
+
+// create new button and attach setInterval to that button which will change color to red
+
+const redButton = document.createElement('button');
+redButton.innerText = 'Red color'
+document.documentElement.appendChild(redButton);
+
+
+const changeButton  = function() {
+    redButton.style.backgroundColor ='red';
+
+}
+
+document.addEventListener('click',changeButton,2000);
+
 // create new button and attach event every 5 seconds should change background color to blue
 
 const blueButton = document.createElement('button');
 blueButton.innerHTML = 'Change color'
 document.documentElement.appendChild(blueButton);
 
-blueButton.addEventListener('click', setTimeout(() => {
-blueButton.style.backgroundColor = 'blue';
-},"5000")
-)
 
+const changeToBlue = function(){
+setTimeout(() => {
+    blueButton.style.backgroundColor = 'blue';
+},'4000')
+}
+blueButton.addEventListener('click', changeToBlue);
+
+
+
+// create array which will return element at index specified
+
+const specified = function(array,index) {
+    for(let i =0; i < array.length;i++){
+        if(i === index){
+            return array[i];
+        }
+    }
+    return -1;
+}
+
+console.log(specified([1,2,3,4],3));
+
+const elementOnIndex = document.createElement('h1');
+document.documentElement.appendChild(elementOnIndex);
+elementOnIndex.innerText = `Index specified is: ${specified([1,2,3,4,5],3)}`;
