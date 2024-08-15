@@ -262,3 +262,13 @@ console.log(specified([1,2,3,4],3));
 const elementOnIndex = document.createElement('h1');
 document.documentElement.appendChild(elementOnIndex);
 elementOnIndex.innerText = `Index specified is: ${specified([1,2,3,4,5],3)}`;
+
+
+// create for each function which will print all elements in the array
+
+const printElements = function(array){
+    for(let i =0; i < array.length;i++){
+        console.log(array[i]);
+    }
+}
+
