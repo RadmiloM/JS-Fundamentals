@@ -265,10 +265,22 @@ elementOnIndex.innerText = `Index specified is: ${specified([1,2,3,4,5],3)}`;
 
 
 // create for each function which will print all elements in the array
-
+// update function for each element if it is odd append to the dom
 const printElements = function(array){
     for(let i =0; i < array.length;i++){
-        console.log(array[i]);
+        if(i % 2 === 1){
+            const element = document.createElement('p');
+            element.innerText = array[i];
+            document.documentElement.appendChild(element);
+        }
     }
 }
 
+printElements([1,2,3,4,5]);
+
+// remove element from dom using remove child
+
+const removeElement = document.createElement('p');
+document.documentElement.appendChild(removeElement);
+removeElement.innerText = 'Hello world';
+document.documentElement.removeChild(removeElement);
