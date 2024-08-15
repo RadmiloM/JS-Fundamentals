@@ -174,3 +174,12 @@ fetch("/people.json")
 table.style.border = '1px solid black'
 table.style.borderCollapse = 'collapse';
 
+
+// create h2 element and add tag on that element, also append element to document
+
+const h2Element = document.createElement('h2');
+h2Element.innerText = 'This is the new text';
+document.documentElement.appendChild(h2Element);
+const h2 = document.getElementsByTagName('h2');
+
+
