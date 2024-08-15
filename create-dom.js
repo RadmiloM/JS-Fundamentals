@@ -203,12 +203,14 @@ fetch("/animals.json")
     })
 });
 
+// create new button and attach event every 5 seconds should change background color to blue
 
+const blueButton = document.createElement('button');
+blueButton.innerHTML = 'Change color'
+document.documentElement.appendChild(blueButton);
 
-
-
-
-
-
-
+blueButton.addEventListener('click', setTimeout(() => {
+blueButton.style.backgroundColor = 'blue';
+},"5000")
+)
 
