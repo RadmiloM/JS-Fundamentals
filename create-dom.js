@@ -284,3 +284,16 @@ const removeElement = document.createElement('p');
 document.documentElement.appendChild(removeElement);
 removeElement.innerText = 'Hello world';
 document.documentElement.removeChild(removeElement);
+
+
+// create object laptop and extract properties from the same object
+
+const laptop = {
+    brand: "Mac",
+    model: "Air",
+    year: 2024,
+    screenSize: 15,
+    weight: 44
+}
+
+const {brand, model} = laptop;
