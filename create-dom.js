@@ -366,3 +366,7 @@ console.log(car);
 
 delete car.year;
 console.log(car);
+
+// create new property using bracket notation
+car['wheels'] = 4;
+car.wheels = 8;
