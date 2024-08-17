@@ -370,3 +370,29 @@ console.log(car);
 // create new property using bracket notation
 car['wheels'] = 4;
 car.wheels = 8;
+
+/*
+Objective: Practice using methods in objects and understand the this keyword.
+Details:
+Create an object representing a man with properties like firstName, lastName, age, and occupation.
+Add a method introduce that returns a string introducing the person, using the this keyword to access properties.
+Add another method celebrateBirthday that increments the age property by 1 and returns a message celebrating the birthday.
+*/
+
+
+const man = {
+    firstName: "Dejan",
+    lastName: "Danic",
+    age: 44,
+    occupation: "Engineer",
+    introduce() {
+        return `Hello this is ${this['firstName']} and his last name is ${this['lastName']} he is ${this.age} years old and his occupation is ${this.occupation}`
+    },
+    celebrateBirthday(){
+        this.age++;
+        return `Happy new birthday you are now ${this['age']} years old`
+    }
+}
+
+console.log(man.introduce());
+console.log(man.celebrateBirthday());
