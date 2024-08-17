@@ -358,3 +358,11 @@ const car = {
 car.color = 'Red';
 console.log(car['color'])
 
+//add new car property owner
+car.owner = 'Radmilo';
+console.log(car);
+
+// delete year property from the object
+
+delete car.year;
+console.log(car);
