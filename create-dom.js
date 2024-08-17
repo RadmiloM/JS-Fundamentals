@@ -344,3 +344,13 @@ const school = {
 }
 
 school.printDepartments();
+
+// modify and delete propertis in an object
+// create object car with properties like make,model,year,color
+
+car = {
+    make: "Toyota",
+    model: "Camry",
+    year: 2007,
+    color: 'Black'
+}
