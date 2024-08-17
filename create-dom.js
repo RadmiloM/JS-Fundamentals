@@ -348,9 +348,13 @@ school.printDepartments();
 // modify and delete propertis in an object
 // create object car with properties like make,model,year,color
 
-car = {
+const car = {
     make: "Toyota",
     model: "Camry",
     year: 2007,
     color: 'Black'
 }
+// change car color
+car.color = 'Red';
+console.log(car['color'])
+
