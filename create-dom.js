@@ -317,3 +317,30 @@ const book = {
 const bookSummary = document.createElement('p');
 document.documentElement.appendChild(bookSummary);
 bookSummary.innerText = book.getSummary();
+
+// create a nested object which represents school
+// the object should have properties like name,location,departments
+// departments property is object which includes properties for different departments like science,arts and sports each
+// containing array of subjects
+const school = {
+    name: "Belgrade High School",
+    location : "Belgrade",
+    departments: {
+        science: ['Computer Science',"Math Science","Chemistry Science"],
+        arts: ['Visual Arts','Artistry','Painting art'],
+        sports: ['Football','Basketball','Tennis']
+    },
+    printDepartments: function() {
+        school['departments'].science.forEach((scienceDepartment) => {
+            console.log(scienceDepartment);
+        })
+        school['departments'].arts.forEach((artsDepartment) => {
+            console.log(artsDepartment);
+        })
+        school['departments'].sports.forEach((sportsDepartment) => {
+            console.log(sportsDepartment);
+        })
+    }
+}
+
+school.printDepartments();
