@@ -422,3 +422,34 @@ const smartPhone = {
 }
 
 smartPhone.printProperties();
+
+/*
+Create an input field and a button. When the user types something into the input and clicks the button, 
+the text should be added as a new item in an unordered list below the input. 
+Each list item should have a delete button that removes the item when clicked.
+*/
+
+const userInputField = document.createElement('input');
+const userButtonField = document.createElement('button');
+const unorderedUserList = document.createElement('ul');
+document.documentElement.append(userInputField);
+document.documentElement.append(userButtonField);
+userButtonField.innerText = 'Enter user input';
+userButtonField.style.display= 'flex';
+userInputField.appendChild(unorderedUserList);
+document.documentElement.appendChild(unorderedUserList);
+const listItem = document.createElement('li');
+listItem.innerText = 'starter';
+unorderedUserList.appendChild(listItem);
+userInputField.classList.add('user-input');
+userButtonField.addEventListener('click', () => {
+listItem.innerText = document.querySelector('.user-input').value;
+})
+
+const deleteButton = document.createElement('button');
+document.documentElement.appendChild(deleteButton);
+deleteButton.innerText = 'Delete item';
+deleteButton.addEventListener('click', () => {
+    listItem.innerText = '';
+})
+
