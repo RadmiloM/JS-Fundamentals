@@ -396,3 +396,29 @@ const man = {
 
 console.log(man.introduce());
 console.log(man.celebrateBirthday());
+
+/*
+Objective: Iterate over an object's properties.
+Details:
+Create an object representing a smartphone with properties like brand, model, releaseYear, features, where features is an array.
+Write a function that iterates over the object's properties and prints both the keys and their values.
+If a property value is an array (like features), iterate over the array and print each item.
+*/
+
+const smartPhone = {
+    brand: "Apple",
+    model: "IPhone Max 12",
+    releaseYear: [2021,2022,2023],
+    features: ['Camera','Play store','Video'],
+    printProperties() {
+        for(const [key,value] of Object.entries(smartPhone)){
+            if(typeof value === 'object'){
+                value.forEach((property) => {
+                    console.log(property)
+                })
+            }
+        }
+    }
+}
+
+smartPhone.printProperties();
