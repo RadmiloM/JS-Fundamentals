@@ -297,3 +297,23 @@ const laptop = {
 }
 
 const {brand, model} = laptop;
+
+
+// create object which represents books, the object should have properties like title,author,yearPublished and genre,
+// next add a method to the object called getSummary that returns a string summarizing the book details
+// access properties both using doth notation and bracket notation
+// display properties of object on the dom 
+
+const book = {
+    title: "Lord of the Rings",
+    author: "John Ronald Reuel Tolkien",
+    yearPublished: 1954,
+    genre: "Fantasy",
+    getSummary: function() {
+        return `Title: ${this.title}, Author: ${this.author}, year published: ${this.yearPublished}, genre: ${this.genre}`
+    }
+}
+
+const bookSummary = document.createElement('p');
+document.documentElement.appendChild(bookSummary);
+bookSummary.innerText = book.getSummary();
