@@ -453,3 +453,54 @@ deleteButton.addEventListener('click', () => {
     listItem.innerText = '';
 })
 
+
+/*
+Build a to-do list application. 
+Each task added should have a checkbox next to it. 
+When the checkbox is clicked, 
+the task should be crossed out. 
+Include a button that clears all completed tasks.
+*/
+
+const inputTaskLabel = document.createElement('label');
+const createInputTask = document.createElement('input');
+document.documentElement.appendChild(inputTaskLabel);
+inputTaskLabel.innerText = 'Enter the task: ';
+inputTaskLabel.style.display = 'flex';
+inputTaskLabel.style.margin = '10px 0px 0px 10px'
+document.documentElement.appendChild(createInputTask);
+createInputTask.style.display = 'flex';
+createInputTask.style.margin = '10px';
+const createTask = document.createElement('button');
+createTask.innerText = 'Add task';
+document.documentElement.appendChild(createTask);
+createTask.style.marginLeft = '10px';
+createInputTask.setAttribute('class','create-task');
+const listOfTasks=  document.createElement('ol');
+document.documentElement.appendChild(listOfTasks);
+
+createTask.addEventListener('click', function() {
+    const taskContainer = document.createElement('div');
+    const task = document.createElement('input');
+    task.setAttribute('type','checkbox');
+    task.classList.add('class','isChecked')
+    const taskValue = document.createElement('label');
+    taskValue.innerText = document.querySelector('.create-task').value;
+    taskContainer.appendChild(task);
+    taskContainer.appendChild(taskValue);
+    listOfTasks.appendChild(taskContainer);
+    const isSelected = document.querySelector('.isChecked');
+    isSelected.addEventListener('click', () => {
+        if(task.checked){
+            taskValue.style.textDecoration = 'line-through';
+        }else{
+            taskValue.style.textDecoration = 'none';
+        }
+    })
+})
+
+const deleteTasks = document.createElement('button');
+document.documentElement.append(deleteTasks);
+deleteTasks.innerText = 'delete task'
+deleteTasks.style.margin = '10px';
+deleteTasks.style.display = 'flex';
