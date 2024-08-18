@@ -478,13 +478,16 @@ createTask.style.marginLeft = '10px';
 createInputTask.setAttribute('class','create-task');
 const listOfTasks=  document.createElement('ol');
 document.documentElement.appendChild(listOfTasks);
+let taskContainer = document.createElement('div');
+let task = document.createElement('input');
+let taskValue = document.createElement('label');
 
 createTask.addEventListener('click', function() {
-    const taskContainer = document.createElement('div');
-    const task = document.createElement('input');
+    taskContainer = document.createElement('div');
+    task = document.createElement('input');
+    taskValue = document.createElement('label');
     task.setAttribute('type','checkbox');
-    task.classList.add('class','isChecked')
-    const taskValue = document.createElement('label');
+    task.classList.add('isChecked')
     taskValue.innerText = document.querySelector('.create-task').value;
     taskContainer.appendChild(task);
     taskContainer.appendChild(taskValue);
@@ -504,3 +507,9 @@ document.documentElement.append(deleteTasks);
 deleteTasks.innerText = 'delete task'
 deleteTasks.style.margin = '10px';
 deleteTasks.style.display = 'flex';
+deleteTasks.addEventListener('click', () => {
+    listOfTasks.removeChild(taskContainer);
+    taskContainer.removeChild(taskValue);
+    taskContainer.removeChild(task);
+   
+})
