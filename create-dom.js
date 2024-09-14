@@ -562,3 +562,20 @@ const logMessage = function() {
 }
 
 logMessage();
+
+/*
+Requirement: Write a function that takes another function as an argument and 
+executes that function after a delay of 3 seconds. Ensure that the delayed function logs a specific message to the console.
+*/
+
+const delayedFunction = function(specificMessage) {
+    setTimeout(() => {
+        specificMessage();
+    },3000)
+}
+
+const specificMessage = function() {
+    console.log('This is a specific message');
+}
+
+delayedFunction(specificMessage);
