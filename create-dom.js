@@ -513,3 +513,33 @@ deleteTasks.addEventListener('click', () => {
     taskContainer.removeChild(task);
    
 })
+
+/*
+Create a function that logs "Hello, world!" to the console after a delay of 2 seconds. Ensure that the message is only logged once.
+*/
+
+const log = function() {
+    setTimeout(() => {
+        console.log('Hello, world!')
+    },2000)
+}
+log();
+
+/*
+Create a countdown timer that starts from 10 and decrements every second. 
+The timer should log the remaining time to the console. 
+Once the countdown reaches zero, log "Time's up!".
+*/
+
+const countDown = function() {
+    let timer = 10;
+    const intervalId = setInterval(() => {
+        console.log(timer);
+        timer--;
+        if(timer === 0){
+            console.log(`Time's up!`)
+            clearInterval(intervalId);
+        }
+    },1000)
+}
+countDown();
