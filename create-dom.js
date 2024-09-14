@@ -518,12 +518,12 @@ deleteTasks.addEventListener('click', () => {
 Create a function that logs "Hello, world!" to the console after a delay of 2 seconds. Ensure that the message is only logged once.
 */
 
-// const log = function() {
-//     setTimeout(() => {
-//         console.log('Hello, world!')
-//     },2000)
-// }
-// log();
+const log = function() {
+    setTimeout(() => {
+        console.log('Hello, world!')
+    },2000)
+}
+log();
 
 /*
 Create a countdown timer that starts from 10 and decrements every second. 
@@ -531,54 +531,54 @@ The timer should log the remaining time to the console.
 Once the countdown reaches zero, log "Time's up!".
 */
 
-// const countDown = function() {
-//     let timer = 10;
-//     const intervalId = setInterval(() => {
-//         console.log(timer);
-//         timer--;
-//         if(timer === 0){
-//             console.log(`Time's up!`)
-//             clearInterval(intervalId);
-//         }
-//     },1000)
-// }
-// countDown();
+const countDown = function() {
+    let timer = 10;
+    const intervalId = setInterval(() => {
+        console.log(timer);
+        timer--;
+        if(timer === 0){
+            console.log(`Time's up!`)
+            clearInterval(intervalId);
+        }
+    },1000)
+}
+countDown();
 
 /*
 Requirement: Implement a function that logs a message 
 to the console every 1 second for a total of 5 seconds. The message should include the count of how many times it has been logged.
 */
 
-// const logMessage = function() {
-//     let counter = 1;
-//     const log = setInterval(() => {
-//         console.log(`message has been logged ${counter} times`);
-//         counter++;
-//         if(counter === 5){
-//             console.log(`message has been logged ${counter} times`);
-//             clearInterval(log);
-//         }
-//     },1000);
-// }
+const logMessage = function() {
+    let counter = 1;
+    const log = setInterval(() => {
+        console.log(`message has been logged ${counter} times`);
+        counter++;
+        if(counter === 5){
+            console.log(`message has been logged ${counter} times`);
+            clearInterval(log);
+        }
+    },1000);
+}
 
-// logMessage();
+logMessage();
 
 /*
 Requirement: Write a function that takes another function as an argument and 
 executes that function after a delay of 3 seconds. Ensure that the delayed function logs a specific message to the console.
 */
 
-// const delayedFunction = function(specificMessage) {
-//     setTimeout(() => {
-//         specificMessage();
-//     },3000)
-// }
+const delayedFunction = function(specificMessage) {
+    setTimeout(() => {
+        specificMessage();
+    },3000)
+}
 
-// const specificMessage = function() {
-//     console.log('This is a specific message');
-// }
+const specificMessage = function() {
+    console.log('This is a specific message');
+}
 
-// delayedFunction(specificMessage);
+delayedFunction(specificMessage);
 
 /*
 Requirement: Create a series of setTimeout calls that log messages to the console with increasing delays. 
