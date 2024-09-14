@@ -614,3 +614,26 @@ const randomTimeouts = function() {
 randomTimeouts();
 randomTimeouts();
 randomTimeouts();
+
+/*
+Requirement: Create a web page with a button. 
+When the button is clicked, start a timer that logs "Button clicked!" 
+to the console every 2 seconds for a total of 10 seconds. Ensure that the timer stops when the 10 seconds are up.
+*/
+
+const buttonTimer = document.createElement('button');
+buttonTimer.innerText = 'Button';
+buttonTimer.style.backgroundColor = 'gray'
+buttonTimer.style.color = 'red';
+buttonTimer.style.margin = '0px 0px 0px 10px'
+document.documentElement.appendChild(buttonTimer);
+buttonTimer.addEventListener('click', function()  {
+    let counter = 0;
+    const id = setInterval(() => {
+        console.log('Button clicked')
+        counter+=2;
+        if(counter === 10){
+            clearInterval(id);
+        }
+    })
+},2000)
