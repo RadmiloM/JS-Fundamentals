@@ -600,3 +600,17 @@ const recursiveTimeouts = function() {
     },1000)
 }
 recursiveTimeouts();
+
+/*
+Requirement: Write a function that logs a message to the console with a random delay between 1 and 5 seconds. 
+The function should be called 3 times, each with a different random delay.
+*/
+
+const randomTimeouts = function() {
+    setTimeout(()=> {
+        console.log('Message with random delay');
+    },Math.floor(Math.random() * 1000))
+}
+randomTimeouts();
+randomTimeouts();
+randomTimeouts();
