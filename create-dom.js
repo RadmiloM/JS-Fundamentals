@@ -543,3 +543,22 @@ const countDown = function() {
     },1000)
 }
 countDown();
+
+/*
+Requirement: Implement a function that logs a message 
+to the console every 1 second for a total of 5 seconds. The message should include the count of how many times it has been logged.
+*/
+
+const logMessage = function() {
+    let counter = 1;
+    const log = setInterval(() => {
+        console.log(`message has been logged ${counter} times`);
+        counter++;
+        if(counter === 5){
+            console.log(`message has been logged ${counter} times`);
+            clearInterval(log);
+        }
+    },1000);
+}
+
+logMessage();
