@@ -637,3 +637,35 @@ buttonTimer.addEventListener('click', function()  {
         }
     })
 },2000)
+
+
+const p = {
+    name: "Dimetar",
+    age: 44,
+}
+
+const greet = function(){
+    console.log(`Welcome to this palace ${this.name}`);
+}
+
+greet.call(p); 
+
+const calculator = {
+    sum(...args){
+        return args.reduce(function(accumulator, currentValue) {
+            return accumulator + currentValue;
+          }, 0);
+    }
+}
+function calculateTotal(...args){
+    return calculator.sum.apply(calculator,args);
+}
+const numbers = [1,2,3,4]
+console.log(calculateTotal(...numbers))
+
+function multiply(a,b){
+return a * b;
+}
+
+const double = multiply.bind(null,2);
+console.log(double(4));
